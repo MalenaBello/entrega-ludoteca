@@ -1,0 +1,558 @@
+/* ==========================================================================
+   estilosIA.css — Ludoteca "El Dado Curioso"
+   Hoja de estilos única para todo el sitio (sin frameworks, CSS nativo)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+/* ---------- Tokens de diseño ---------- */
+:root {
+  /* Paleta: tablero de madera + fieltro verde + fichas ámbar */
+  --color-fondo:        #F4EFE3; /* pergamino / cartulina */
+  --color-fondo-panel:  #FFFDF8; /* tarjetas */
+  --color-madera-osc:   #2E2418; /* nogal oscuro — texto y cabecera */
+  --color-madera-med:   #5B4632; /* marrón medio — texto secundario */
+  --color-fieltro:      #3F6659; /* verde fieltro de mesa — acentos, nav activo */
+  --color-fieltro-osc:  #294238;
+  --color-ambar:        #B8752E; /* ficha ámbar — llamados a la acción */
+  --color-ambar-osc:    #8F5A20;
+  --color-granate:      #7A2E2E; /* ficha roja — detalles puntuales */
+  --color-borde:        #DDD3BC;
+
+  --fuente-titulos: 'Bitter', Georgia, serif;
+  --fuente-texto:   'Source Sans 3', Verdana, sans-serif;
+
+  --radio: 6px;
+  --sombra: 0 2px 6px rgba(46, 36, 24, 0.15);
+  --ancho-maximo: 1120px;
+}
+
+/* ---------- Reset ligero ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-madera-osc);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-fieltro-osc);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-madera-osc);
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-madera-osc);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+p {
+  max-width: 70ch;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ambar);
+  outline-offset: 2px;
+}
+
+/* ---------- Utilidades de layout ---------- */
+.contenedor {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Cabecera y navegación ---------- */
+.cabecera {
+  background-color: var(--color-madera-osc);
+  border-bottom: 4px solid var(--color-ambar);
+}
+
+.cabecera__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+}
+
+.marca {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: #FBF6EA;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.marca__ficha {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--color-ambar);
+  border: 2px solid #FBF6EA;
+}
+
+.marca__lema {
+  font-family: var(--fuente-texto);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #C9BFA8;
+}
+
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-principal a {
+  display: inline-block;
+  color: #EDE6D4;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radio);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus {
+  background-color: var(--color-fieltro);
+  color: #FFFFFF;
+}
+
+.nav-principal a[aria-current="page"] {
+  background-color: var(--color-madera-osc);
+  color: #FFFFFF;
+  border-bottom: 2px solid var(--color-ambar);
+}
+/* ---------- Hero (portada) ---------- */
+.hero {
+  background: linear-gradient(180deg, var(--color-fieltro) 0%, var(--color-fieltro-osc) 100%);
+  color: #F4EFE3;
+  padding: 3rem 0;
+}
+
+.hero__contenido {
+  max-width: 62ch;
+}
+
+.hero h1 {
+  color: #FFFFFF;
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.6rem);
+}
+
+.hero p {
+  color: #E4EDE9;
+}
+
+/* ---------- Selector de categorías (index) ---------- */
+.selector-categorias {
+  padding: 2.5rem 0 3rem;
+}
+
+.selector-categorias h2 {
+  margin-bottom: 0.4rem;
+}
+
+.subtitulo-seccion {
+  color: var(--color-madera-med);
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+}
+
+.tarjetas-categoria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-categoria {
+  background-color: var(--color-fondo-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tarjeta-categoria__icono {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.tarjeta-categoria h3 {
+  margin-bottom: 0;
+}
+
+.tarjeta-categoria__enlace {
+  margin-top: auto;
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--color-fieltro-osc);
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio);
+  text-decoration: none;
+}
+
+.tarjeta-categoria__enlace:hover,
+.tarjeta-categoria__enlace:focus {
+  background-color: var(--color-fieltro-osc);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* ---------- Encabezado de página interna (categorías, contacto, quiénes somos) ---------- */
+.encabezado-pagina {
+  background-color: var(--color-fondo-panel);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 2.25rem 0;
+}
+
+.encabezado-pagina h1 {
+  margin-bottom: 0.35rem;
+}
+
+.migas {
+  font-size: 0.85rem;
+  color: var(--color-madera-med);
+  margin: 0 0 0.6rem;
+}
+
+.migas a {
+  color: var(--color-madera-osc);
+  text-decoration: underline;
+}
+
+/* ---------- Catálogo de juegos ---------- */
+.catalogo {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.grilla-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tarjeta-juego {
+  background-color: var(--color-fondo-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-juego__portada {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 3px solid var(--color-ambar);
+  background-color: var(--color-borde);
+}
+
+.tarjeta-juego__cuerpo {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.tarjeta-juego__etiqueta {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-fieltro-osc);
+  background-color: #E3EEE9;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.tarjeta-juego h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.tarjeta-juego__resena {
+  color: var(--color-madera-med);
+  flex-grow: 1;
+}
+
+.tarjeta-juego__descarga {
+  margin-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  background-color: var(--color-madera-osc);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radio);
+  text-decoration: none;
+}
+
+.tarjeta-juego__descarga:hover,
+.tarjeta-juego__descarga:focus {
+  background-color: var(--color-fieltro-osc);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* ---------- Navegación entre categorías (dentro del catálogo) ---------- */
+.nav-categorias {
+  border-top: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde);
+  background-color: #EFE8D6;
+}
+
+.nav-categorias ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.9rem 0;
+}
+
+.nav-categorias a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-borde);
+  color: var(--color-madera-osc);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--color-fondo-panel);
+}
+.nav-categorias a:hover,
+.nav-categorias a:focus {
+  border-color: var(--color-fieltro);
+  color: var(--color-fieltro-osc);
+  text-decoration: none;
+}
+
+.nav-categorias a[aria-current="page"] {
+  background-color: var(--color-fieltro);
+  border-color: var(--color-fieltro);
+  color: #FFFFFF;
+}
+
+/* ---------- Página "Quiénes somos" ---------- */
+.perfil-responsable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2.5rem 0 3.5rem;
+}
+
+.perfil-responsable__foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-ambar);
+  flex-shrink: 0;
+}
+
+.perfil-responsable__datos {
+  flex: 1 1 320px;
+}
+
+.lista-simple {
+  padding-left: 1.1rem;
+}
+
+.lista-simple li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Formulario de contacto ---------- */
+.contacto {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.formulario-contacto {
+  background-color: var(--color-fondo-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  max-width: 620px;
+}
+
+.campo {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-weight: 600;
+  color: var(--color-madera-osc);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background-color: #FFFFFF;
+  color: var(--color-madera-osc);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--color-fieltro);
+}
+
+.campo--radios {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.campo--radios legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 0.3rem;
+}
+
+.opcion-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+}
+
+.boton-enviar {
+  background-color: var(--color-fieltro);
+  color: #FFFFFF;
+  font-weight: 700;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radio);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton-enviar:hover,
+.boton-enviar:focus {
+  background-color: var(--color-fieltro-osc);
+}
+
+.info-contacto-directo {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--color-borde);
+}
+
+/* ---------- Pie de página ---------- */
+.pie-de-pagina {
+  background-color: var(--color-madera-osc);
+  color: #C9BFA8;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.pie-de-pagina__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+.pie-de-pagina a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive: tablets ---------- */
+@media (max-width: 860px) {
+  .cabecera__contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Responsive: móviles ---------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav-principal ul,
+  .nav-categorias ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-principal a {
+    width: 100%;
+  }
+
+  .grilla-juegos,
+  .tarjetas-categoria {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-responsable {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .campo--radios {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .formulario-contacto {
+    padding: 1.5rem;
+  }
+}

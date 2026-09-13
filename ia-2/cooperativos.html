@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juegos cooperativos de nuestra ludoteca">
+    <title>Ludoteca | Cooperativos</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor">
+        <h1>🎲 Ludoteca</h1>
+        <p>Juegos cooperativos</p>
+    </div>
+</header>
+
+<nav>
+    <div class="contenedor">
+        <a href="index.html">Inicio</a>
+        <a href="estrategia.html">Estrategia</a>
+        <a href="familiares.html">Familiares</a>
+        <a href="cooperativos.html" class="activo">Cooperativos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="mantenimiento.html">Quién mantiene el sitio</a>
+    </div>
+</nav>
+
+<main class="contenedor">
+
+    <section class="cabecera-categoria">
+        <h2>Juegos cooperativos</h2>
+        <p>
+            En estos juegos todos los participantes colaboran para
+            conseguir un objetivo común.
+        </p>
+    </section>
+
+    <!-- Cambiado a <div> para cumplir el estándar W3C sin alterar estilos -->
+    <div class="catalogo">
+
+        <article class="juego">
+            <img src="imágenes/pandemic.png"
+                 alt="Portada del juego Pandemic">
+
+            <div class="contenido-juego">
+                <h3>Pandemic</h3>
+
+                <p>
+                    Los jugadores forman un equipo de especialistas que
+                    debe colaborar para controlar enfermedades que se
+                    están extendiendo por diferentes ciudades del mundo.
+                </p>
+
+                <a class="boton" href="reglamentos/pandemic.pdf" download>
+                    Descargar reglamento
+                </a>
+            </div>
+        </article>
+
+        <article class="juego">
+            <img src="imágenes/forbidden-island.png"
+                 alt="Portada del juego Forbidden Island">
+
+            <div class="contenido-juego">
+                <h3>Forbidden Island</h3>
+
+                <p>
+                    Los jugadores trabajan juntos para recuperar tesoros
+                    antes de que una isla misteriosa quede completamente
+                    sumergida.
+                </p>
+
+                <a class="boton"
+                   href="reglamentos/forbidden-island.pdf"
+                   download>
+                    Descargar reglamento
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+</main>
+
+<footer>
+    <div class="contenedor">
+        <p>&copy; 2026 Ludoteca. Sitio web estático.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | El Dado Curioso</title>
+  <meta name="description" content="Formulario de contacto de la ludoteca El Dado Curioso.">
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera__contenido">
+      <p class="marca">
+        <span class="marca__ficha" aria-hidden="true"></span>
+        El Dado Curioso
+        <span class="marca__lema">ludoteca de barrio</span>
+      </p>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estrategia.html">Estrategia</a></li>
+          <li><a href="familiares.html">Familiares</a></li>
+          <li><a href="cartas.html">Cartas</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="encabezado-pagina">
+      <div class="contenedor">
+        <p class="migas"><a href="index.html">Inicio</a> / Contacto</p>
+        <h1>Contacto</h1>
+        <p>¿Querés sugerir un juego, avisar de un enlace roto o consultar por un préstamo? Escribinos.</p>
+      </div>
+    </div>
+
+    <section class="contacto contenedor">
+      <form class="formulario-contacto" action="mailto:contacto@eldadocurioso.example" method="post" enctype="text/plain">
+
+        <div class="campo">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Martina Gómez" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="motivo">Motivo de la consulta</label>
+          <select id="motivo" name="motivo">
+            <option value="sugerencia">Sugerir un juego para el catálogo</option>
+            <option value="prestamo">Consulta sobre préstamo de un juego</option>
+            <option value="enlace-roto">Reportar un enlace o PDF roto</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <fieldset class="campo campo--radios">
+          <legend>¿Sos socio de la ludoteca?</legend>
+          <label class="opcion-radio">
+            <input type="radio" name="socio" value="si" checked> Sí
+          </label>
+          <label class="opcion-radio">
+            <input type="radio" name="socio" value="no"> No
+          </label>
+        </fieldset>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos brevemente tu consulta" required></textarea>
+        </div>
+
+        <button type="submit" class="boton-enviar">Enviar mensaje</button>
+      </form>
+
+      <div class="info-contacto-directo">
+        <h2>También podés escribirnos directamente</h2>
+        <ul class="lista-simple">
+          <li>Correo: contacto@eldadocurioso.example</li>
+          <li>Instagram: @eldadocurioso</li>
+          <li>Local: calle 66 n.º 1234, Los Hornos, La Plata — martes a sábados de 16 a 20 h.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-de-pagina">
+    <div class="contenedor pie-de-pagina__contenido">
+      <p>&copy; 2026 El Dado Curioso — Ludoteca de barrio.</p>
+      <p><a href="contacto.html">Contactanos</a> · <a href="quienes-somos.html">Quiénes somos</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

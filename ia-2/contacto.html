@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto de la ludoteca">
+    <title>Ludoteca | Contacto</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor">
+        <h1>🎲 Ludoteca</h1>
+        <p>Contacto</p>
+    </div>
+</header>
+
+<nav>
+    <div class="contenedor">
+        <a href="index.html">Inicio</a>
+        <a href="estrategia.html">Estrategia</a>
+        <a href="familiares.html">Familiares</a>
+        <a href="cooperativos.html">Cooperativos</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+        <a href="mantenimiento.html">Quién mantiene el sitio</a>
+    </div>
+</nav>
+
+<main class="contenedor">
+
+    <section class="formulario-seccion">
+
+        <h2>Contactanos</h2>
+
+        <p>
+            Si querés hacer una consulta o sugerir un juego para nuestra
+            ludoteca, podés completar el siguiente formulario.
+        </p>
+
+        <form action="#" method="post">
+
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text"
+                       id="nombre"
+                       name="nombre"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje"
+                          name="mensaje"
+                          rows="6"
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="boton">
+                Enviar mensaje
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="contenedor">
+        <p>&copy; 2026 Ludoteca. Sitio web estático.</p>
+    </div>
+</footer>
+
+</body>
+</html>

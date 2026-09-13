@@ -1,0 +1,385 @@
+/* ==============================
+   ESTILOS GENERALES
+   ============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f1ea;
+    color: #292621;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   ENCABEZADO
+   ============================== */
+
+header {
+    background-color: #3d405b;
+    color: #ffffff;
+    padding: 35px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+
+/* ==============================
+   NAVEGACIÓN
+   ============================== */
+
+nav {
+    background-color: #2f3145;
+}
+
+nav .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 18px;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: #e07a5f;
+}
+
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+   ============================== */
+
+main {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.bienvenida,
+.cabecera-categoria,
+.informacion,
+.formulario-seccion {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bienvenida {
+    text-align: center;
+}
+
+.bienvenida h2,
+.cabecera-categoria h2,
+.informacion h2,
+.formulario-seccion h2 {
+    color: #3d405b;
+    margin-bottom: 15px;
+}
+
+.informacion h2:not(:first-child) {
+    margin-top: 30px;
+}
+
+.bienvenida p,
+.cabecera-categoria p,
+.informacion p {
+    margin-bottom: 12px;
+}
+
+
+/* ==============================
+   CATEGORÍAS
+   ============================== */
+
+.categorias h2 {
+    text-align: center;
+    color: #3d405b;
+    margin-bottom: 25px;
+}
+
+.tarjetas-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.categoria {
+    background-color: #ffffff;
+    color: #292621;
+    text-decoration: none;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-5px);
+    border-color: #e07a5f;
+}
+
+.categoria h3 {
+    color: #3d405b;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.icono {
+    font-size: 2.5rem;
+}
+
+
+/* ==============================
+   CATÁLOGO
+   ============================== */
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.juego {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.juego img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contenido-juego {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.contenido-juego h2 {
+    color: #3d405b;
+    margin-bottom: 12px;
+}
+
+.contenido-juego p {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+
+/* ==============================
+   BOTONES Y ENLACES
+   ============================== */
+
+.boton {
+    display: inline-block;
+    background-color: #e07a5f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.boton:hover {
+    background-color: #c95f45;
+}
+
+
+/* ==============================
+   FORMULARIO
+   ============================== */
+
+form {
+    max-width: 700px;
+    margin-top: 25px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #3d405b;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid #e07a5f;
+    border-color: #e07a5f;
+}
+
+
+/* ==============================
+   PIE DE PÁGINA
+   ============================== */
+
+footer {
+    background-color: #3d405b;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 0;
+}
+
+
+/* ==============================
+   RESPONSIVE - TABLETS
+   ============================== */
+
+@media (max-width: 900px) {
+
+    .tarjetas-categorias {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==============================
+   RESPONSIVE - MÓVILES
+   ============================== */
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        width: 92%;
+    }
+
+    header {
+        padding: 25px 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav .contenedor {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    main {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .bienvenida,
+    .cabecera-categoria,
+    .informacion,
+    .formulario-seccion {
+        padding: 20px;
+    }
+
+    .tarjetas-categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .juego img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contenido-juego {
+        padding: 20px;
+    }
+    /* Corrección de contraste para botones de descarga y menú activo */
+.boton {
+  display: inline-block;
+  background-color: var(--color-madera-osc);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radio);
+  text-decoration: none;
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--color-fieltro-osc);
+  color: #FFFFFF !important;
+}
+
+nav a.activo {
+  background-color: var(--color-madera-osc);
+  color: #FFFFFF !important;
+  border-bottom: 2px solid var(--color-ambar);
+}
+
+}
